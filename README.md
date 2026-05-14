@@ -1,6 +1,6 @@
 # Ivanborisov
 sudo apt install postgresql postgresql-contrib -y
-git clone https://github.com/opendlp/opendlp.git
+git clone 
 cd opendlp
 make
 sudo make install
