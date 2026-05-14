@@ -1,15 +1,11 @@
 # Ivanborisov
-Установка и настройка MS SQL Server 2022 
-# Обновление системы
-sudo apt update && sudo apt upgrade -y
+sudo apt install postgresql postgresql-contrib -y
+git clone https://github.com/opendlp/opendlp.git
+cd opendlp
+make
+sudo make install
 
-# Импорт ключа и добавление репозитория
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/22.04/mssql-server-2022.list)"
-
-# Установка SQL Server
-sudo apt install mssql-server -y
-sudo /opt/mssql/bin/mssql-conf setup  #
-
-# Проверка статуса
-sudo systemctl status mssql-server   active 
+# Создание БД и пользователя для OpenDLP
+sudo -u postgres psql -c "CREATE DATABASE opendlp;"
+sudo -u postgres createuser opendlp_user
+sudo -u postgres psql -d opendlp -c
