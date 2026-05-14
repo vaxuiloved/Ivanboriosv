@@ -10,7 +10,7 @@ targets:
     host: localhost
     port: 1433
     database: TestDLP
-    username: SA
+    username: ivanboriosv
     password: 123qweR%
     tables:
       - Employees
