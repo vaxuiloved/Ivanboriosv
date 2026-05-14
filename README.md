@@ -1,11 +1,18 @@
 # Ivanborisov
-sudo apt install postgresql postgresql-contrib -y
-git clone 
-cd opendlp
-make
-sudo make install
-
-# Создание БД и пользователя для OpenDLP
-sudo -u postgres psql -c "CREATE DATABASE opendlp;"
-sudo -u postgres createuser opendlp_user
-sudo -u postgres psql -d opendlp -c
+database:
+  host: localhost
+  port: 5432
+  name: opendlp
+  user: opendlp_user
+  password: opendlp_password
+targets:
+  - type: mssql
+    host: localhost
+    port: 1433
+    database: TestDLP
+    username: SA
+    password: 123qweR%
+    tables:
+      - Employees
+    columns:
+      - SSN
