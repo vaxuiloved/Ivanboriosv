@@ -1,4 +1,4 @@
-# Ivanborioыщм
+# Ivanborisov
 Установка и настройка MS SQL Server 2022 
 # Обновление системы
 sudo apt update && sudo apt upgrade -y
@@ -9,7 +9,7 @@ sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubunt
 
 # Установка SQL Server
 sudo apt install mssql-server -y
-sudo /opt/mssql/bin/mssql-conf setup  # выберите Express, примите соглашение, задайте пароль SA (например, MyP@ssw0rd123)
+sudo /opt/mssql/bin/mssql-conf setup  #
 
 # Проверка статуса
-sudo systemctl status mssql-server  # должно быть active (running)
+sudo systemctl status mssql-server   active 
